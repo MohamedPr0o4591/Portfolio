@@ -4,8 +4,9 @@ import { Col, Row } from 'react-bootstrap'
 import { Box, Button, IconButton, Stack } from '@mui/material'
 import { ArrowUpwardRounded, FacebookOutlined, GitHub, KeyboardArrowUpRounded, LinkedIn, Telegram, WhatsApp } from '@mui/icons-material'
 import download from 'downloadjs'
+import CV from '../../assets/cv.pdf'
 
-export default function HomeComponent(props) {
+export default function HomeComponent() {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -121,9 +122,10 @@ export default function HomeComponent(props) {
                                         p: '10px 40px',
                                         boxShadow: '0 0 .4rem #954008',
                                     }}
-                                    onClick={_ => props.handleDownloadCV()}
                                 >
-                                    Download CV
+                                    <a href={CV} download={"CV.pdf"} className='text-decoration-none text-light'>
+                                        Download CV
+                                    </a>
                                 </Button>
                             </Box>
                         </Stack>

@@ -4,8 +4,9 @@ import { Col, Row } from 'react-bootstrap'
 import { Box, Button, Stack } from '@mui/material'
 import img from '../../../public/img2.png'
 import SectionTitle from '../SectionTitle'
+import CV from '../../assets/cv.pdf'
 
-export default function AboutComponent(props) {
+export default function AboutComponent() {
     return (
         <div className='about-component' id='about'>
             <Row className='w-100'>
@@ -201,9 +202,10 @@ export default function AboutComponent(props) {
                                         p: '10px 40px',
                                         boxShadow: '0 0 .4rem #954008',
                                     }}
-                                    onClick={_ => props.handleDownloadCV()}
                                 >
-                                    Download CV
+                                    <a href={CV} download={"CV.pdf"} className='text-decoration-none text-light'>
+                                        Download CV
+                                    </a>
                                 </Button>
                             </Box>
                         </Stack>
