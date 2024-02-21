@@ -5,7 +5,7 @@ import { Box, Button, IconButton, Stack } from '@mui/material'
 import { ArrowUpwardRounded, FacebookOutlined, GitHub, KeyboardArrowUpRounded, LinkedIn, Telegram, WhatsApp } from '@mui/icons-material'
 import download from 'downloadjs'
 import CV from '../../assets/cv.pdf'
-import img from '../../assets/img.jpg'
+import img from '../../../public/img.jpg'
 
 export default function HomeComponent() {
 
