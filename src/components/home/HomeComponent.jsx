@@ -5,6 +5,7 @@ import { Box, Button, IconButton, Stack } from '@mui/material'
 import { ArrowUpwardRounded, FacebookOutlined, GitHub, KeyboardArrowUpRounded, LinkedIn, Telegram, WhatsApp } from '@mui/icons-material'
 import download from 'downloadjs'
 import CV from '../../assets/cv.pdf'
+import img from '../../assets/img.jpg'
 
 export default function HomeComponent() {
 
@@ -142,7 +143,7 @@ export default function HomeComponent() {
                     <Box className='second-side'>
 
                         <div className="box-image position-relative overflow-hidden">
-                            <img src="../../../public/img.jpg" alt="Image" className='w-100' />
+                            <img src={img} alt="Image" className='w-100' />
                             <strong className='inner'>
                                 WEB DEVELOPER
                             </strong>
