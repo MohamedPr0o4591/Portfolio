@@ -1,0 +1,47 @@
+.latest-projects {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.latest-projects .box {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    border-radius: .6rem;
+    box-shadow: 0 0 0.4rem rgb(149, 64, 8);
+    overflow: hidden;
+}
+
+.latest-projects .box .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1;
+    background: linear-gradient(to top, rgb(149, 64, 8), rgb(149, 64, 8), transparent);
+    opacity: 0;
+    color: #efef;
+}
+
+.latest-projects .box:hover img {
+    transform: scale(1.2, 1.2);
+}
+
+.latest-projects .box:hover .overlay {
+    opacity: 1;
+}
+
+.latest-projects .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}

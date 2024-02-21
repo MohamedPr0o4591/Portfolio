@@ -1,0 +1,26 @@
+.about-component {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-component .column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-component .box-img {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: #954008;
+    box-shadow: 0 0 .6rem rgb(149, 64, 8);
+}
+
+.about-component .box-img img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
