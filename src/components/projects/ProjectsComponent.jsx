@@ -21,21 +21,25 @@ export default function ProjectsComponent() {
                     img={cruds}
                     title='CRUDS'
                     link='https://cruds-project.web.app'
+                    desc="CRUDS project for managing goods and products (adding, deleting and modifying products)"
                 />
                 <Card
                     img={photoEditor}
                     title='Photo Editor'
                     link='https://photoeditor-project.web.app'
+                    desc="A brief photo editing project"
                 />
                 <Card
                     img={misterProgramming}
                     title='MisterProgramming'
                     link='https://misterprogramming.com'
+                    desc="A complete project for a programming company"
                 />
                 <Card
                     img={adminDashbaord}
                     title='Admin Dashbaord'
                     link='https://admin-dashboard-459.web.app/'
+                    desc='Admin control panel project'
                 />
             </Stack>
         </div>

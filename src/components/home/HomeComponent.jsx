@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './HomeComponent.css'
 import { Col, Row } from 'react-bootstrap'
 import { Box, Button, IconButton, Stack } from '@mui/material'
-import { ArrowUpwardRounded, FacebookOutlined, GitHub, KeyboardArrowUpRounded, LinkedIn, Telegram, WhatsApp } from '@mui/icons-material'
+import { ArrowUpwardRounded, FacebookOutlined, GitHub, Instagram, KeyboardArrowUpRounded, LinkedIn, Telegram, WhatsApp } from '@mui/icons-material'
 import download from 'downloadjs'
 import CV from '../../assets/cv.pdf'
 import img from '../../../public/img.jpg'
@@ -42,7 +42,7 @@ export default function HomeComponent() {
                             position: 'fixed',
                             bottom: 10 + 'px',
                             right: 10 + 'px',
-                            zIndex: 1,
+                            zIndex: 2,
                         }}
                     >
                         <IconButton
@@ -103,6 +103,12 @@ export default function HomeComponent() {
                                 </li>
 
                                 <li >
+                                    <a href="https://www.instagram.com/mohamedpr0o459/" target='_blank' className='box-icons'>
+                                        <Instagram />
+                                    </a>
+                                </li>
+
+                                <li >
                                     <a href="https://www.linkedin.com/in/mohamed-mokhtar-245927277" target='_blank' className='box-icons'>
                                         <LinkedIn />
                                     </a>
@@ -116,18 +122,21 @@ export default function HomeComponent() {
                             </ul>
 
                             <Box >
-                                <Button
-                                    sx={{
-                                        background: '#954008',
-                                        color: 'inherit',
-                                        p: '10px 40px',
-                                        boxShadow: '0 0 .4rem #954008',
-                                    }}
-                                >
-                                    <a href={CV} download={"CV.pdf"} className='text-decoration-none text-light'>
+
+                                <a href={CV} download={"CV.pdf"} className='text-decoration-none text-light'>
+                                    <Button
+                                        sx={{
+                                            background: '#954008',
+                                            color: 'inherit',
+                                            p: '10px 40px',
+                                            boxShadow: '0 0 .4rem #954008',
+                                        }}
+                                    >
+
                                         Download CV
-                                    </a>
-                                </Button>
+                                    </Button >
+                                </a>
+
                             </Box>
                         </Stack>
 

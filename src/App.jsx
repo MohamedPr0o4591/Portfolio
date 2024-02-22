@@ -8,7 +8,6 @@ import AboutComponent from './components/about/AboutComponent';
 import ProjectsComponent from './components/projects/ProjectsComponent';
 import Footer from './utilities/Footer/Footer';
 import Contact from './components/contact/Contact';
-// import cv from './assets/cv.pdf'
 
 function App() {
   const [mode, setMode] = React.useState(
@@ -21,29 +20,6 @@ function App() {
 
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
-  // const handleDownloadCV = () => {
-  //   fetch(cv)
-  //     .then(res => {
-  //       // تحديد اسم الملف في رأس الاستجابة
-  //       let fileName = 'CV.pdf';
-  //       const disposition = res.headers.get('content-disposition');
-  //       if (disposition && disposition.includes('attachment')) {
-  //         const [, filename] = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/.exec(disposition);
-  //         if (filename) {
-  //           fileName = filename.replace(/['"]/g, '');
-  //         }
-  //       }
-
-  //       // تحويل الرد إلى كائن Blob
-  //       return res.blob().then(blob => {
-  //         // استخدام downloadjs لتنزيل الملف
-  //         download(blob, fileName, 'application/pdf');
-  //       });
-  //     })
-  //     .catch(error => {
-  //       console.error('Error downloading CV:', error);
-  //     });
-  // };
 
   return (
     <ThemeProvider theme={theme}>

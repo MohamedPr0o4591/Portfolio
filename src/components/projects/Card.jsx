@@ -11,7 +11,7 @@ export default function Card(props) {
                 </h2>
 
                 <span className='fs-4'>
-                    To read more and view the project ,please visit our project link
+                    {props.desc}
                 </span>
 
                 <IconButton

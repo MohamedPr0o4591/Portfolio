@@ -12,7 +12,6 @@
     border-radius: .6rem;
     box-shadow: 0 0 0.4rem rgb(149, 64, 8);
     overflow: hidden;
-    flex-grow: 1;
 }
 
 .latest-projects .box .overlay {
