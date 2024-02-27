@@ -35,7 +35,7 @@ export default function ProjectsComponent() {
         />
         <Card
           img={adminDashboard}
-          title="Admin Dashbaord"
+          title="Admin Dashboard"
           link="https://admin-dashboard-459.web.app/"
           desc="Admin control panel project"
         />
