@@ -9,6 +9,7 @@ import adminDashboard from "../../assets/img4.avif";
 import { LaunchOutlined } from "@mui/icons-material";
 import Card from "./Card";
 import firebaseImg from "../../assets/img5.png";
+import ips from "../../assets/ips.png";
 
 export default function ProjectsComponent() {
   return (
@@ -44,6 +45,13 @@ export default function ProjectsComponent() {
           title="Firebase Storage"
           link="https://fire-storage-459.web.app/"
           desc="Firebase Storage for uploading images / files"
+        />
+
+        <Card
+          img={ips}
+          title="IPS Data Storage"
+          link="https://ips-used.web.app/"
+          desc="Firebase Storage for ips data with secret token to can use this data for adding new data / ips or searching about data / ips"
         />
       </Stack>
     </div>

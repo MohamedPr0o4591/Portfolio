@@ -1,115 +1,122 @@
 * {
-    font-family: 'Oswald', sans-serif;
-    transition: all .3s ease;
+  font-family: "Oswald", sans-serif;
+  transition: all 0.3s ease;
+}
+
+body {
+  --bs-body-font-size: 120%;
+}
+
+a {
+  font-size: 1rem;
 }
 
 /* Scrollbar Track */
 ::-webkit-scrollbar {
-    width: 3px;
-    /* حجم شريط التمرير */
+  width: 3px;
+  /* حجم شريط التمرير */
 }
 
 /* Scrollbar Thumb (الجزء القابل للسحب) */
 ::-webkit-scrollbar-thumb {
-    background-color: #954008;
-    /* لون الخلفية */
-    border-radius: 6px;
-    /* شكل الزوايا */
+  background-color: #954008;
+  /* لون الخلفية */
+  border-radius: 6px;
+  /* شكل الزوايا */
 }
 
 /* Scrollbar Track (الجزء الذي لا يمكن السحب) */
 ::-webkit-scrollbar-track {
-    background-color: none;
-    /* لون المسار */
+  background-color: none;
+  /* لون المسار */
 }
 
 /* Responsive phone screens */
-@media (min-width : 320px) and (max-width : 767px) {
-    .top-bar {
-        position: relative;
-    }
+@media (min-width: 320px) and (max-width: 767px) {
+  .top-bar {
+    position: relative;
+  }
 
-    .top-bar .container1 {
-        display: none;
-    }
+  .top-bar .container1 {
+    display: none;
+  }
 
-    .home-component .second-side {
-        width: 206px;
-        height: 206px;
-        padding: 13px;
-    }
+  .home-component .second-side {
+    width: 206px;
+    height: 206px;
+    padding: 13px;
+  }
 
-    .home-component .box-image .inner {
-        padding: 4px 12px;
-        font-size: .75rem;
-    }
+  .home-component .box-image .inner {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+  }
 
-    .home-component .box-image:hover .inner {
-        bottom: 20px;
-    }
+  .home-component .box-image:hover .inner {
+    bottom: 20px;
+  }
 
-    .home-component .second-side span {
-        width: 13px;
-        height: 10px;
-        transform-origin: 103px;
-    }
+  .home-component .second-side span {
+    width: 13px;
+    height: 10px;
+    transform-origin: 103px;
+  }
 
-    .about-component .box-img {
-        width: 320px;
-        height: 320px;
-    }
+  .about-component .box-img {
+    width: 320px;
+    height: 320px;
+  }
 
-    .about-component .column,
-    .latest-projects {
-        margin-top: 1rem;
-    }
+  .about-component .column,
+  .latest-projects {
+    margin-top: 1rem;
+  }
 
+  .latest-projects .box {
+    flex-grow: 1;
+  }
 
-    .latest-projects .box {
-        flex-grow: 1;
-    }
+  .contact-component form .input-box,
+  .contact-component .box-btn {
+    width: 100%;
+  }
 
-    .contact-component form .input-box,
-    .contact-component .box-btn {
-        width: 100%;
-    }
+  .contact-component .box-btn {
+    padding: 0;
+  }
 
-    .contact-component .box-btn {
-        padding: 0;
-    }
+  .contact-component form .input-box .inner-box {
+    flex-direction: column;
+  }
 
-    .contact-component form .input-box .inner-box {
-        flex-direction: column;
-    }
-
-    .top-bar .container2 {
-        display: block;
-    }
+  .top-bar .container2 {
+    display: block;
+  }
 }
 
-@media (min-width : 768px) and (max-width : 1200px) {
-    .home-component {
-        padding-top: 5.5rem;
-    }
+@media (min-width: 768px) and (max-width: 1200px) {
+  .home-component {
+    padding-top: 5.5rem;
+  }
 
-    .latest-projects .box {
-        flex-grow: 1;
-    }
+  .latest-projects .box {
+    flex-grow: 1;
+  }
 }
 
-@media (min-width : 768px) and (max-width : 991px) {
-    .about-component {
-        margin-top: 14rem;
-    }
+@media (min-width: 768px) and (max-width: 991px) {
+  .about-component {
+    margin-top: 14rem;
+  }
 }
 
-@media (min-width : 992px) and (max-width : 1200px) {
-    .home-component .second-side {
-        width: 444px;
-        height: 444px;
-    }
+@media (min-width: 992px) and (max-width: 1200px) {
+  .home-component .second-side {
+    width: 444px;
+    height: 444px;
+  }
 
-    .home-component .second-side span {
-        transform-origin: 222px;
-    }
+  .home-component .second-side span {
+    transform-origin: 222px;
+  }
 }

@@ -82,7 +82,7 @@ export default function Contact() {
       <SectionTitle title1="Contact" title2="Me" />
 
       <form
-        className="w-100 d-flex flex-column gap-4 align-items-center"
+        className="w-100 d-flex flex-column gap-4 align-items-center contact-form"
         ref={form}
         onSubmit={handleSubmit}
       >
