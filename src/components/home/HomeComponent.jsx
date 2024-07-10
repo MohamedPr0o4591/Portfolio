@@ -77,7 +77,7 @@ export default function HomeComponent() {
               <h2>Mohamed Mokhtar</h2>
 
               <span>
-                Seniorr Front End Developer| HTML ,CSS ,JavaScript ,PHP
+                Senior Front End Developer| HTML ,CSS ,JavaScript ,PHP
                 Passionate about Creating Engaging Web Experience
               </span>
             </Box>
