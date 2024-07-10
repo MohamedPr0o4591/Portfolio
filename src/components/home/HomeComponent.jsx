@@ -15,6 +15,7 @@ import {
 import download from "downloadjs";
 import CV from "../../assets/cv.pdf";
 import img from "../../../public/img.jpg";
+import { socialMedia } from "./../../data";
 
 export default function HomeComponent() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,72 +77,26 @@ export default function HomeComponent() {
               <h2>Mohamed Mokhtar</h2>
 
               <span>
-                Junior Front End Developer| HTML, CSS, JavaScript Passionate
-                about Creating Engaging Web Experience
+                Senior Front End Developer| HTML ,CSS ,JavaScript ,PHP
+                Passionate about Creating Engaging Web Experience
               </span>
             </Box>
 
             <Stack gap={1}>
               <ul className="list-unstyled d-flex gap-3 flex-wrap">
-                <li>
-                  <a
-                    href="https://www.facebook.com/lmohamedmokhtarl"
-                    target="_blank"
-                    className="box-icons"
-                  >
-                    <FacebookOutlined />
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="https://wa.me/+201022585956"
-                    target="_blank"
-                    className="box-icons"
-                  >
-                    <WhatsApp />
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="https://t.me/mohamedpr0o459"
-                    target="_blank"
-                    className="box-icons"
-                  >
-                    <Telegram />
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="https://www.instagram.com/mohamedpr0o459/"
-                    target="_blank"
-                    className="box-icons"
-                  >
-                    <Instagram />
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/mohamed-mokhtar-245927277"
-                    target="_blank"
-                    className="box-icons"
-                  >
-                    <LinkedIn />
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="https://github.com/MohamedPr0o4591"
-                    target="_blank"
-                    className="box-icons"
-                  >
-                    <GitHub />
-                  </a>
-                </li>
+                {socialMedia.map((social, index) => {
+                  return (
+                    <li key={index}>
+                      <a
+                        href={social.link}
+                        target="_blank"
+                        className="box-icons"
+                      >
+                        {social.icon}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
 
               <Box>

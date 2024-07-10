@@ -5,6 +5,7 @@ import { Box, Button, Stack } from "@mui/material";
 import img from "../../../public/img2.png";
 import SectionTitle from "../SectionTitle";
 import CV from "../../assets/cv.pdf";
+import { frameWorks, languages } from "./../../data";
 
 export default function AboutComponent() {
   return (
@@ -48,42 +49,13 @@ export default function AboutComponent() {
                           className="d-flex  gap-3 my-3 list-unstyled flex-wrap"
                           style={{ pointerEvents: "none" }}
                         >
-                          <li>
-                            <span
-                              style={{
-                                background: "#954008",
-                                borderRadius: 0.6 + "rem",
-                                padding: "5px 10px",
-                                color: "#efef",
-                              }}
-                            >
-                              HTML
-                            </span>
-                          </li>
-                          <li>
-                            <span
-                              style={{
-                                background: "#954008",
-                                borderRadius: 0.6 + "rem",
-                                padding: "5px 10px",
-                                color: "#efef",
-                              }}
-                            >
-                              CSS
-                            </span>
-                          </li>
-                          <li>
-                            <span
-                              style={{
-                                background: "#954008",
-                                borderRadius: 0.6 + "rem",
-                                padding: "5px 10px",
-                                color: "#efef",
-                              }}
-                            >
-                              JS
-                            </span>
-                          </li>
+                          {languages.map((language, index) => {
+                            return (
+                              <li key={index} className="listOfLanguages">
+                                <span>{language.name}</span>
+                              </li>
+                            );
+                          })}
                         </ul>
                       </li>
                       <li>
@@ -93,42 +65,13 @@ export default function AboutComponent() {
                             className="d-flex  gap-3 my-3 list-unstyled flex-wrap"
                             style={{ pointerEvents: "none" }}
                           >
-                            <li>
-                              <span
-                                style={{
-                                  background: "#954008",
-                                  borderRadius: 0.6 + "rem",
-                                  padding: "5px 10px",
-                                  color: "#efef",
-                                }}
-                              >
-                                Material UI
-                              </span>
-                            </li>
-                            <li>
-                              <span
-                                style={{
-                                  background: "#954008",
-                                  borderRadius: 0.6 + "rem",
-                                  padding: "5px 10px",
-                                  color: "#efef",
-                                }}
-                              >
-                                Bootstrap
-                              </span>
-                            </li>
-                            <li>
-                              <span
-                                style={{
-                                  background: "#954008",
-                                  borderRadius: 0.6 + "rem",
-                                  padding: "5px 10px",
-                                  color: "#efef",
-                                }}
-                              >
-                                React JS
-                              </span>
-                            </li>
+                            {frameWorks.map((frameWork, index) => {
+                              return (
+                                <li key={index} className="listOfLanguages">
+                                  <span>{frameWork.name}</span>
+                                </li>
+                              );
+                            })}
                           </ul>
                         </span>
                       </li>
