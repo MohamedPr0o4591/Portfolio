@@ -28,32 +28,39 @@ export default function ProjectsComponent() {
   return (
     <div className="latest-projects d-flex flex-column gap-3" id="projects">
       <SectionTitle title1="Latest" title2="Projects" />
-      <Stack direction={"row"} flexWrap={"wrap"} width={100 + "%"} gap={2}>
-        {listProjects?.map((project, index) => {
-          return (
-            <Card
-              key={index}
-              img={project.img}
-              title={project.name}
-              link={project.link}
-              desc={project.desc}
-            />
-          );
-        })}
-      </Stack>
+      {/* web projects */}
+      <div className="webProjects">
+        <span className="title">
+          Web <p>Projects</p> ({projects.length})
+        </span>
+        <Stack direction={"row"} flexWrap={"wrap"} width={100 + "%"} gap={2}>
+          {listProjects?.map((project, index) => {
+            return (
+              <Card
+                key={index}
+                img={project.img}
+                title={project.name}
+                link={project.link}
+                desc={project.desc}
+              />
+            );
+          })}
+        </Stack>
 
-      {projects.length > 6 && (
-        <Button
-          variant="outlined"
-          color="inherit"
-          onClick={() => setFilter(!filter)}
-          endIcon={
-            filter ? <KeyboardArrowDownRounded /> : <KeyboardArrowUpRounded />
-          }
-        >
-          {filter ? "Show More" : "Show Less"}
-        </Button>
-      )}
+        {projects.length > 6 && (
+          <Button
+            variant="outlined"
+            color="inherit"
+            onClick={() => setFilter(!filter)}
+            endIcon={
+              filter ? <KeyboardArrowDownRounded /> : <KeyboardArrowUpRounded />
+            }
+            className="btn"
+          >
+            {filter ? "Show More" : "Show Less"}
+          </Button>
+        )}
+      </div>
     </div>
   );
 }

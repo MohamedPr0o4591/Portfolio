@@ -16,6 +16,7 @@ import firebaseImg from "../src/assets/img5.png";
 import ips from "../src/assets/ips.png";
 import cpa from "../src/assets/earnMoney.gif";
 import education from "../src/assets/education.jpg";
+import quran from "../src/assets/quran.png";
 
 export const languages = [
   {
@@ -124,9 +125,15 @@ export const projects = [
     desc: "Free luke CPA project with terms and conditions and privacy policy",
   },
   {
-    name: "Admin Education Project",
+    name: "Admin Education",
     img: education,
     link: "https://dashboard-courses.web.app/",
     desc: "Admin control panel project for courses management",
+  },
+  {
+    name: "Quran App",
+    img: quran,
+    link: "https://eza3a-quran-kareem.vercel.app/",
+    desc: "Broadcasting the Holy Quran with recitation of all surahs",
   },
 ];
