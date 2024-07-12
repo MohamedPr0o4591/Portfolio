@@ -8,6 +8,7 @@ import {
 } from "@mui/icons-material";
 import Card from "./Card";
 import { projects } from "../../data";
+import { androidProjects } from "./../../data";
 
 export default function ProjectsComponent() {
   const [listProjects, setListProjects] = useState([]);
@@ -29,38 +30,53 @@ export default function ProjectsComponent() {
     <div className="latest-projects d-flex flex-column gap-3" id="projects">
       <SectionTitle title1="Latest" title2="Projects" />
       {/* web projects */}
-      <div className="webProjects">
-        <span className="title">
-          Web <p>Projects</p> ({projects.length})
-        </span>
-        <Stack direction={"row"} flexWrap={"wrap"} width={100 + "%"} gap={2}>
-          {listProjects?.map((project, index) => {
-            return (
-              <Card
-                key={index}
-                img={project.img}
-                title={project.name}
-                link={project.link}
-                desc={project.desc}
-              />
-            );
-          })}
-        </Stack>
+      {projects?.length > 0 && (
+        <div className="webProjects">
+          <span className="title">
+            Web <p>Projects</p> ({projects.length})
+          </span>
+          <Stack direction={"row"} flexWrap={"wrap"} width={100 + "%"} gap={2}>
+            {listProjects?.map((project, index) => {
+              return (
+                <Card
+                  key={index}
+                  img={project.img}
+                  title={project.name}
+                  link={project.link}
+                  desc={project.desc}
+                />
+              );
+            })}
+          </Stack>
 
-        {projects.length > 6 && (
-          <Button
-            variant="outlined"
-            color="inherit"
-            onClick={() => setFilter(!filter)}
-            endIcon={
-              filter ? <KeyboardArrowDownRounded /> : <KeyboardArrowUpRounded />
-            }
-            className="btn"
-          >
-            {filter ? "Show More" : "Show Less"}
-          </Button>
-        )}
-      </div>
+          {projects.length > 6 && (
+            <Button
+              variant="outlined"
+              color="inherit"
+              onClick={() => setFilter(!filter)}
+              endIcon={
+                filter ? (
+                  <KeyboardArrowDownRounded />
+                ) : (
+                  <KeyboardArrowUpRounded />
+                )
+              }
+              className="btn"
+            >
+              {filter ? "Show More" : "Show Less"}
+            </Button>
+          )}
+        </div>
+      )}
+
+      {/* android projects */}
+      {androidProjects?.length > 0 && (
+        <div className="androidProjects">
+          <span className="title">
+            Android <p>Projects</p> ({androidProjects.length})
+          </span>
+        </div>
+      )}
     </div>
   );
 }

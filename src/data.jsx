@@ -137,3 +137,5 @@ export const projects = [
     desc: "Broadcasting the Holy Quran with recitation of all surahs",
   },
 ];
+
+export const androidProjects = [];
