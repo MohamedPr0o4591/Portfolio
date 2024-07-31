@@ -97,7 +97,7 @@ export const projects = [
   {
     name: "MisterProgramming",
     img: misterProgramming,
-    link: "https://misterprogramming.com",
+    link: "https://mister-programming.vercel.app/",
     desc: "A complete project for a programming company",
   },
   {
