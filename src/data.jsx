@@ -7,6 +7,7 @@ import {
   LinkedIn,
   Telegram,
   WhatsApp,
+  ث,
 } from "@mui/icons-material";
 import cruds from "../src/assets/img1.webp";
 import photoEditor from "../src/assets/img2.jpg";
@@ -17,6 +18,7 @@ import ips from "../src/assets/ips.png";
 import cpa from "../src/assets/earnMoney.gif";
 import education from "../src/assets/education.jpg";
 import quran from "../src/assets/quran.png";
+import fastCreditCards from "./assets/start earnning-6mMX5C7E.png";
 
 export const languages = [
   {
@@ -135,6 +137,12 @@ export const projects = [
     img: quran,
     link: "https://eza3a-quran-kareem.vercel.app/",
     desc: "Broadcasting the Holy Quran with recitation of all surahs",
+  },
+  {
+    name: "Fast Credit Cards",
+    img: fastCreditCards,
+    link: "https://fast-credit-cards.vercel.app/",
+    desc: "Fast credit cards CPA project with terms and conditions and privacy policy",
   },
 ];
 
