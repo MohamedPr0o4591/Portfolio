@@ -18,7 +18,7 @@ import ips from "../src/assets/ips.png";
 import cpa from "../src/assets/earnMoney.gif";
 import education from "../src/assets/education.jpg";
 import quran from "../src/assets/quran.png";
-import fastCreditCards from "./assets/start earnning-6mMX5C7E.png";
+import fastCreditCards from "./assets/fastCreditCards.png";
 
 export const languages = [
   {
