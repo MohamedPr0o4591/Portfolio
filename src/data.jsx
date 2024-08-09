@@ -19,6 +19,7 @@ import cpa from "../src/assets/earnMoney.gif";
 import education from "../src/assets/education.jpg";
 import quran from "../src/assets/quran.png";
 import fastCreditCards from "./assets/fastCreditCards.png";
+import learnWithMeLogo from "./assets/LearnLogo.png";
 
 export const languages = [
   {
@@ -143,6 +144,12 @@ export const projects = [
     img: fastCreditCards,
     link: "https://fast-credit-cards.vercel.app/",
     desc: "Fast credit cards CPA project with terms and conditions and privacy policy",
+  },
+  {
+    name: "Learn With Me",
+    img: learnWithMeLogo,
+    link: "https://learn-with-me.vercel.app/",
+    desc: "Learn with me platform project with firebase authentication, firestore and database",
   },
 ];
 
