@@ -98,10 +98,16 @@ export const projects = [
     desc: "A brief photo editing project",
   },
   {
-    name: "MisterProgramming",
+    name: "MisterProgramming (JS)",
     img: misterProgramming,
     link: "https://mister-programming.vercel.app/",
-    desc: "A complete project for a programming company",
+    desc: "A complete project for a programming company using javascript",
+  },
+  {
+    name: "CRUDS (JS)",
+    img: cruds,
+    link: "https://cruds-project-js.vercel.app/",
+    desc: "CRUDS project for managing goods and products (adding, deleting and modifying products) using javascript",
   },
   {
     name: "Admin Dashboard",
