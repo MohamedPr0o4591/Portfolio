@@ -1,5 +1,9 @@
+:root {
+  --main-color: #954008;
+}
+
 * {
-  font-family: "Oswald", sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -19,7 +23,7 @@ a {
 
 /* Scrollbar Thumb (الجزء القابل للسحب) */
 ::-webkit-scrollbar-thumb {
-  background-color: #954008;
+  background-color: var(--main-color);
   /* لون الخلفية */
   border-radius: 6px;
   /* شكل الزوايا */

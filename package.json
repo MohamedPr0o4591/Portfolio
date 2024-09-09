@@ -11,16 +11,16 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@fullcalendar/core": "^6.1.10",
     "@fullcalendar/daygrid": "^6.1.10",
     "@fullcalendar/interaction": "^6.1.10",
     "@fullcalendar/react": "^6.1.10",
     "@fullcalendar/timegrid": "^6.1.10",
-    "@mui/icons-material": "^5.15.9",
-    "@mui/material": "^5.15.10",
-    "@mui/styled-engine-sc": "^6.0.0-alpha.16",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/material": "^5.16.7",
+    "@mui/styled-engine-sc": "^6.0.2",
     "@mui/x-data-grid": "^6.19.4",
     "@mui/x-data-grid-generator": "^6.19.4",
     "@nivo/bar": "^0.84.0",
@@ -44,7 +44,7 @@
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",

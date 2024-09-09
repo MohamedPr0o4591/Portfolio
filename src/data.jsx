@@ -7,7 +7,6 @@ import {
   LinkedIn,
   Telegram,
   WhatsApp,
-  ث,
 } from "@mui/icons-material";
 import cruds from "../src/assets/img1.webp";
 import photoEditor from "../src/assets/img2.jpg";

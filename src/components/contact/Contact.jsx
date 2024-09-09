@@ -8,7 +8,7 @@ import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
-export default function Contact() {
+export default function Contact({ sectionsRef }) {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -68,7 +68,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="contact-component" id="contact">
+    <div className="contact-component" id="contact" ref={el => sectionsRef.current.contact = el}>
       <Snackbar
         open={open}
         autoHideDuration={2500}

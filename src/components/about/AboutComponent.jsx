@@ -7,9 +7,9 @@ import SectionTitle from "../SectionTitle";
 import CV from "../../assets/cv.pdf";
 import { frameWorks, languages } from "./../../data";
 
-export default function AboutComponent() {
+export default function AboutComponent({ sectionsRef }) {
   return (
-    <div className="about-component" id="about">
+    <div className="about-component" id="about" ref={el => sectionsRef.current.about = el}>
       <Row className="w-100">
         <Col sm={12} lg={6} className="column ">
           <Box className="box-img">
@@ -111,10 +111,10 @@ export default function AboutComponent() {
               <Box>
                 <Button
                   sx={{
-                    background: "#954008",
+                    background: "var(--main-color)",
                     color: "inherit",
                     p: "10px 40px",
-                    boxShadow: "0 0 .4rem #954008",
+                    boxShadow: "0 0 .4rem var(--main-color)",
                   }}
                 >
                   <a

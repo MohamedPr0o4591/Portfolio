@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./TopBar.css";
 import { Container } from "react-bootstrap";
 import { Box, IconButton, Stack, useTheme } from "@mui/material";
@@ -10,15 +10,14 @@ import {
 } from "@mui/icons-material";
 import { getDesignTokens } from "../../theme";
 
-export default function TopBar({ setMode }) {
-  const handleChangeMode = (_) => {
-    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-  };
+export default function TopBar(props) {
+
 
   const theme = useTheme();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [openList, setOpenList] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +32,13 @@ export default function TopBar({ setMode }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+
+  const handleChangeMode = (_) => {
+    props.setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+  };
+
+
   const themeSystem = getDesignTokens(theme.palette.mode);
 
   return (
@@ -42,20 +48,16 @@ export default function TopBar({ setMode }) {
         background: isScrolled
           ? themeSystem.palette.background.primary
           : "none",
-        boxShadow: isScrolled ? "0 0 .4rem #954008" : "none",
+        boxShadow: isScrolled ? "0 0 .4rem var(--main-color)" : "none",
       }}
     >
       <Container className="container1">
         <Stack direction={"row"} alignItems={"center"}>
           <a
             href="#"
-            className="fw-bold"
-            style={{
-              letterSpacing: 0.1 + "rem",
-              color: "#954008",
-            }}
+            className="fw-bold a-title"
           >
-            Portfolio
+            Mohamed <span >Mokhtar</span>
           </a>
 
           <Box flexGrow={1} />
@@ -72,6 +74,7 @@ export default function TopBar({ setMode }) {
                 color: theme.palette.text.primary,
                 fontSize: 1.1 + "rem",
               }}
+              className={props.activeSection === 'home' ? 'active' : ''}
             >
               Home
             </a>
@@ -82,6 +85,8 @@ export default function TopBar({ setMode }) {
                 color: theme.palette.text.primary,
                 fontSize: 1.1 + "rem",
               }}
+              className={props.activeSection === 'about' ? 'active' : ''}
+
             >
               About
             </a>
@@ -92,6 +97,8 @@ export default function TopBar({ setMode }) {
                 color: theme.palette.text.primary,
                 fontSize: 1.1 + "rem",
               }}
+              className={props.activeSection === 'projects' ? 'active' : ''}
+
             >
               Projects
             </a>
@@ -102,6 +109,8 @@ export default function TopBar({ setMode }) {
                 color: theme.palette.text.primary,
                 fontSize: 1.1 + "rem",
               }}
+              className={props.activeSection === 'contact' ? 'active' : ''}
+
             >
               Contact
             </a>
@@ -142,13 +151,9 @@ export default function TopBar({ setMode }) {
 
           <a
             href="#"
-            className="fw-bold"
-            style={{
-              letterSpacing: 0.1 + "rem",
-              color: "#954008",
-            }}
+            className="fw-bold a-title"
           >
-            Portfolio
+            Mohamed <span >Mokhtar</span>
           </a>
 
           <Box>

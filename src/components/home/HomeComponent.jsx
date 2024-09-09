@@ -17,7 +17,7 @@ import CV from "../../assets/cv.pdf";
 import img from "../../../public/img.jpg";
 import { socialMedia } from "./../../data";
 
-export default function HomeComponent() {
+export default function HomeComponent({ sectionsRef }) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export default function HomeComponent() {
   };
 
   return (
-    <div className="home-component" id="home">
+    <div className="home-component" id="home" ref={el => sectionsRef.current.home = el}>
       {isScrolled ? (
         <Box
           sx={{
@@ -55,7 +55,7 @@ export default function HomeComponent() {
           <IconButton color="inherit" onClick={handleTopClicked}>
             <KeyboardArrowUpRounded
               sx={{
-                background: "#954008",
+                background: "var(--main-color)",
                 borderRadius: 50 + "%",
                 width: 42 + "px",
                 height: 42 + "px",
@@ -73,8 +73,9 @@ export default function HomeComponent() {
         >
           <Stack gap={2}>
             <Box className="first-side">
-              <h4>Hello ,im</h4>
-              <h2>Mohamed Mokhtar</h2>
+              <h1 >
+                Hi, It's <span>Mohamed</span>
+              </h1>
 
               <span>
                 Senior Front End Developer| HTML ,CSS ,JavaScript ,PHP
@@ -83,7 +84,7 @@ export default function HomeComponent() {
             </Box>
 
             <Stack gap={1}>
-              <ul className="list-unstyled d-flex gap-3 flex-wrap">
+              <ul className="list-unstyled d-flex gap-3 flex-wrap list-icons">
                 {socialMedia.map((social, index) => {
                   return (
                     <li key={index}>
@@ -107,10 +108,10 @@ export default function HomeComponent() {
                 >
                   <Button
                     sx={{
-                      background: "#954008",
+                      background: "var(--main-color)",
                       color: "inherit",
                       p: "10px 40px",
-                      boxShadow: "0 0 .4rem #954008",
+                      boxShadow: "0 0 .4rem var(--main-color)",
                     }}
                   >
                     Download CV

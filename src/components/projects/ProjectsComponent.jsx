@@ -10,7 +10,7 @@ import Card from "./Card";
 import { projects } from "../../data";
 import { androidProjects } from "./../../data";
 
-export default function ProjectsComponent() {
+export default function ProjectsComponent({ sectionsRef }) {
   const [listProjects, setListProjects] = useState([]);
   const [filter, setFilter] = useState(true);
 
@@ -27,7 +27,7 @@ export default function ProjectsComponent() {
   }, [projects, filter]);
 
   return (
-    <div className="latest-projects d-flex flex-column gap-3" id="projects">
+    <div className="latest-projects d-flex flex-column gap-3" id="projects" ref={el => sectionsRef.current.projects = el}>
       <SectionTitle title1="Latest" title2="Projects" />
       {/* web projects */}
       {projects?.length > 0 && (

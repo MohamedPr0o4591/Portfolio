@@ -11,9 +11,16 @@
   transition: all 0.228s ease;
 }
 
-.top-bar .routes a:hover {
-  /* font-weight: 600; */
+.top-bar .routes a {
+  border-bottom: 3px solid transparent;
+  font-weight: 600;
+}
+
+.top-bar .routes a:hover,
+.top-bar .routes a.active {
   transform: scale(1.05, 1.05);
+  border-bottom: 3px solid var(--main-color);
+  color: var(--main-color) !important;
 }
 
 .top-bar .container2 {
@@ -21,7 +28,7 @@
   position: relative;
   z-index: 2;
   border-radius: 0.4rem;
-  box-shadow: 0 0 0.4rem #954008;
+  box-shadow: 0 0 0.4rem var(--main-color);
   padding: 4px;
 }
 
@@ -33,7 +40,7 @@
   left: 0;
   top: 0;
   height: 100vh;
-  box-shadow: 0 0 0.4rem #954008;
+  box-shadow: 0 0 0.4rem var(--main-color);
   overflow: hidden;
 }
 
@@ -43,9 +50,25 @@
 }
 
 .top-bar .overListMenu ul a {
-  background: #954008;
+  background: var(--main-color);
   display: block;
   padding: 10px;
   border-radius: 0.6rem;
   color: #efef;
+}
+
+.top-bar .a-title {
+  transition: .3s ease;
+  letter-spacing: .1rem;
+  color: inherit;
+  font-size: 130%;
+}
+
+.top-bar .a-title span {
+  color: var(--main-color);
+  text-shadow: 0 0 25px var(--main-color);
+}
+
+.top-bar .a-title:hover {
+  transform: scale(1.1);
 }
