@@ -36,6 +36,12 @@ a {
 }
 
 /* Responsive phone screens */
+@media (min-width : 320px) and (max-width : 400px) {
+  .top-bar .a-title {
+    font-size: 88%;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
   .top-bar {
     position: relative;
