@@ -8,7 +8,7 @@ export default function Card(props) {
       <div className="overlay p-2">
         <h2 className="fw-bold">{props.title} Project</h2>
 
-        <span className="fs-4">{props.desc}</span>
+        <span >{props.desc}</span>
 
         <IconButton
           sx={{

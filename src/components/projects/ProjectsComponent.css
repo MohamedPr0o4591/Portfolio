@@ -26,12 +26,10 @@
   flex-direction: column;
   gap: 10px;
   z-index: 1;
-  background: linear-gradient(
-    to top,
-    rgb(149, 64, 8),
-    rgb(149, 64, 8),
-    transparent
-  );
+  background: linear-gradient(to top,
+      rgb(149, 64, 8),
+      rgb(149, 64, 8),
+      transparent);
   opacity: 0;
   color: #efef;
 }
@@ -77,4 +75,10 @@
 .latest-projects .webProjects .btn,
 .latest-projects .androidProjects .btn {
   margin: 1rem auto;
+}
+
+.latest-projects .overlay span {
+  width: 100%;
+  text-align: start;
+  font-size: 85%;
 }
