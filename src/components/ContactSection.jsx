@@ -1,6 +1,6 @@
 import React from "react";
 import HeadLine from "./HeadLine";
-import { contactInfo } from "../../data";
+import { contactInfo } from "../../Data";
 
 export default function ContactSection(props) {
   return (

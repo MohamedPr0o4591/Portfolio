@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import profileImg from "../assets/img2.png";
 import HeadLine from "./HeadLine";
-import { about_hobbies, about_interests, about_skills } from "../../data";
+import { about_hobbies, about_interests, about_skills } from "../../Data";
 
 export default function AboutSection(props) {
   return (

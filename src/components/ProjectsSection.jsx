@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./styles.css";
 import HeadLine from "./HeadLine";
-import { webProjects } from "../../data";
+import { webProjects } from "../../Data";
 import img from "../assets/design/admin-dashboard.png";
 import Slider from "react-slick";
 
