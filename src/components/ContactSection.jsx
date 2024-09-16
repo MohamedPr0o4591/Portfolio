@@ -1,8 +1,46 @@
-import React from "react";
+import React, { useRef } from "react";
 import HeadLine from "./HeadLine";
 import { contactInfo } from "../../Data";
+import emailjs from "@emailjs/browser";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactSection(props) {
+  const form = useRef();
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_3birgdt", "template_c9imdoh", form.current, {
+        publicKey: "D4Z9I3jewjCxeVQ1T",
+      })
+      .then((_) => {
+        toast.success("Message sent successfully", {
+          position: "top-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: { fontSize: "18px" },
+        });
+        form.current.reset();
+      }),
+      (error) => {
+        toast.error("Failed to send message. Please try again.", {
+          position: "top-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: { fontSize: "18px" },
+        });
+        console.error("FAILED...", error.text);
+      };
+  }
+
   return (
     <section
       className="contact-section"
@@ -12,7 +50,12 @@ export default function ContactSection(props) {
       <HeadLine title="Get" subTitle="in touch" />
 
       <div className="contact-container">
-        <form action="" className="contact-form">
+        <form
+          ref={form}
+          action=""
+          className="contact-form"
+          onSubmit={sendEmail}
+        >
           <h3>Let's work together</h3>
 
           <p>
@@ -21,18 +64,31 @@ export default function ContactSection(props) {
           </p>
 
           <div className="form-group">
-            <input type="text" placeholder="First Name" required />
-            <input type="text" placeholder="Last Name" required />
+            <input
+              type="text"
+              placeholder="First Name"
+              name="first_name"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              name="last_name"
+              required
+            />
           </div>
 
           <div className="form-group">
-            <input type="email" placeholder="Email" required />
-            <input type="text" placeholder="Phone Number (optional)" />
+            <input type="email" placeholder="Email" name="email" required />
+            <input
+              type="text"
+              placeholder="Phone Number (optional)"
+              name="phone"
+            />
           </div>
 
           <textarea
-            name=""
-            id=""
+            name="message"
             cols="30"
             rows="5"
             placeholder="Message"
@@ -58,6 +114,8 @@ export default function ContactSection(props) {
           })}
         </div>
       </div>
+
+      <ToastContainer />
     </section>
   );
 }
