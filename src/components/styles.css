@@ -449,6 +449,7 @@ h2 span {
   margin-top: 10rem;
   gap: 2rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .contact-section .contact-container form {
