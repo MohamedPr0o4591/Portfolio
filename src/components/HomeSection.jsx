@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { homeImg, socialMedia } from "../../data";
+import { homeImg, socialMedia } from "../../Data";
 import cdFile from "../assets/cv.pdf";
 
 export default function HomeSection(props) {
