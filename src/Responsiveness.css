@@ -97,6 +97,10 @@
     padding: 20px 30px;
   }
 
+  .contact-section .form-group {
+    flex-direction: column;
+  }
+
   .contact-section .contact-info {
     padding: 10px 20px;
   }

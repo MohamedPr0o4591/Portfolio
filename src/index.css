@@ -42,6 +42,7 @@ a {
 section {
   min-height: 100vh;
   padding: 10rem 12% 10rem;
+  overflow-x: hidden;
 }
 
 .handjet-400 {

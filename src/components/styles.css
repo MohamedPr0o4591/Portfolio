@@ -460,6 +460,7 @@ h2 span {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
 }
 
 .contact-section .contact-container form h3 {
@@ -537,6 +538,7 @@ h2 span {
   color: var(--text-color);
   background: transparent;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .contact-section .contact-info {
