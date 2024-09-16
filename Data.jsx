@@ -56,8 +56,6 @@ export const socialMedia = [
   },
 ];
 
-export const homeImg = "./public/mohamed.jpg";
-
 export const about_interests = [
   {
     id: 1,
