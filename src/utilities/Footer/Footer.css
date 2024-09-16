@@ -1,6 +1,35 @@
-.footer {
-  padding: 20px;
-  background: rgb(149, 64, 8);
-  color: #efef;
-  font-size: 1rem;
+footer.footer {
+  background: var(--main-color-dark);
+  color: var(--bg-color);
+  padding: 15px 12%;
+}
+
+.footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid var(--bg-color);
+  padding-bottom: 15px;
+}
+
+.footer .footer-content a {
+  color: var(--bg-color);
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+.footer .footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer .footer-copyright {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.6;
 }

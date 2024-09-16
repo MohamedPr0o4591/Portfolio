@@ -1,95 +1,63 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import TopBar from "./utilities/TopBar/TopBar";
-import { Container } from "react-bootstrap";
-import HomeComponent from "./components/home/HomeComponent";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { getDesignTokens } from "./theme";
-import AboutComponent from "./components/about/AboutComponent";
-import ProjectsComponent from "./components/projects/ProjectsComponent";
-import Footer from "./utilities/Footer/Footer";
-import Contact from "./components/contact/Contact";
+import React, { useEffect, useRef, useState } from "react";
+import NavBar from "./utilities/navbar/NavBar";
+import HomeSection from "./components/HomeSection";
+import AboutSection from "./components/AboutSection";
+import ProjectsSection from "./components/ProjectsSection";
+import ContactSection from "./components/ContactSection";
+import Footer from "./utilities/footer/Footer";
 
-function App() {
-  const [mode, setMode] = useState(
-    localStorage.mode ? localStorage.mode : "light"
-  );
+export default function App() {
+  const [activeSection, setActiveSection] = useState("home");
 
-  const [activeSection, setActiveSection] = useState('home');
-
-  // Refs for each section
-
-  const sectionsRef = useRef(
-    {
-      home: null,
-      about: null,
-      projects: null,
-      contact: null,
-    }
-  )
+  const sectionRefs = useRef({
+    home: null,
+    about: null,
+    projects: null,
+    contact: null,
+  });
 
   useEffect(() => {
-    localStorage.mode = mode;
-  }, [mode]);
-
-
-  useEffect(_ => {
-    const observer = new IntersectionObserver(
-      enteries => {
-        enteries.forEach(entry => {
+    let observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
-        })
+        });
       },
       {
-        threshold: 0.5
-      } // 50% of the section needs to be visible
+        threshold: 0.5,
+      }
     );
 
-    // Observe all sections
-    Object.values(sectionsRef.current).forEach(section => {
+    Object.values(sectionRefs.current).forEach((section) => {
       if (section) {
         observer.observe(section);
       }
     });
 
-    return _ => {
-      // Cleanup observer
-      Object.values(sectionsRef.current).forEach(section => {
+    return (_) => {
+      Object.values(sectionRefs.current).forEach((section) => {
         if (section) {
           observer.unobserve(section);
         }
-      })
+      });
     };
   }, []);
 
-  const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
-
   return (
-    <ThemeProvider theme={theme}>
-      <div
-        className="app"
-        style={{
-          background: getDesignTokens(mode).palette.background.primary,
-          color: theme.palette.text.primary,
-        }}
-      >
-        <TopBar setMode={setMode} activeSection={activeSection} />
+    <div className="App">
+      <NavBar activeSection={activeSection} />
 
-        <Container>
-          <HomeComponent sectionsRef={sectionsRef} />
+      <HomeSection sectionRefs={sectionRefs} />
 
-          <AboutComponent sectionsRef={sectionsRef} />
+      <AboutSection sectionRefs={sectionRefs} />
 
-          <ProjectsComponent sectionsRef={sectionsRef} />
+      <ProjectsSection sectionRefs={sectionRefs} />
 
-          <Contact sectionsRef={sectionsRef} />
-        </Container>
+      <ContactSection sectionRefs={sectionRefs} />
 
-        <Footer />
-      </div>
-    </ThemeProvider>
+      <Footer />
+    </div>
   );
 }
-
-export default App;

@@ -1,132 +1,67 @@
 :root {
-  --main-color: #954008;
+  --main-color: #00ffee;
+  --main-color-dark: #00b3a9;
+  --main-color-light: #e6f9f8;
+  --main-color-contrast: #000;
+  --text-color: #fff;
+  --bg-color: #080808;
+  --second-bg-color: #131313;
 }
 
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
-  transition: all 0.3s ease;
+}
+
+*::selection {
+  color: var(--main-color);
+  background: var(--main-color-dark);
+}
+
+html {
+  font-size: 60%;
+  overflow-x: hidden;
 }
 
 body {
-  --bs-body-font-size: 120%;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 a {
-  font-size: 1rem;
+  color: var(--text-color);
 }
 
-/* Scrollbar Track */
+section {
+  min-height: 100vh;
+  padding: 10rem 12% 10rem;
+}
+
+.handjet-400 {
+  font-family: "Handjet", sans-serif;
+  font-weight: 400;
+}
+
 ::-webkit-scrollbar {
-  width: 3px;
-  /* حجم شريط التمرير */
+  width: 8px;
 }
 
-/* Scrollbar Thumb (الجزء القابل للسحب) */
-::-webkit-scrollbar-thumb {
-  background-color: var(--main-color);
-  /* لون الخلفية */
-  border-radius: 6px;
-  /* شكل الزوايا */
-}
-
-/* Scrollbar Track (الجزء الذي لا يمكن السحب) */
 ::-webkit-scrollbar-track {
-  background-color: none;
-  /* لون المسار */
+  background: var(--bg-color);
 }
 
-/* Responsive phone screens */
-@media (min-width : 320px) and (max-width : 400px) {
-  .top-bar .a-title {
-    font-size: 88%;
-  }
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 4px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
-  .top-bar {
-    position: relative;
-  }
-
-  .top-bar .container1 {
-    display: none;
-  }
-
-  .home-component .second-side {
-    width: 206px;
-    height: 206px;
-    padding: 13px;
-  }
-
-  .home-component .box-image .inner {
-    padding: 4px 12px;
-    font-size: 0.75rem;
-  }
-
-  .home-component .box-image:hover .inner {
-    bottom: 20px;
-  }
-
-  .home-component .second-side span {
-    width: 13px;
-    height: 10px;
-    transform-origin: 103px;
-  }
-
-  .about-component .box-img {
-    width: 320px;
-    height: 320px;
-  }
-
-  .about-component .column,
-  .latest-projects {
-    margin-top: 1rem;
-  }
-
-  .latest-projects .box {
-    flex-grow: 1;
-  }
-
-  .contact-component form .input-box,
-  .contact-component .box-btn {
-    width: 100%;
-  }
-
-  .contact-component .box-btn {
-    padding: 0;
-  }
-
-  .contact-component form .input-box .inner-box {
-    flex-direction: column;
-  }
-
-  .top-bar .container2 {
-    display: block;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1200px) {
-  .home-component {
-    padding-top: 5.5rem;
-  }
-
-  .latest-projects .box {
-    flex-grow: 1;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .about-component {
-    margin-top: 14rem;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-  .home-component .second-side {
-    width: 444px;
-    height: 444px;
-  }
-
-  .home-component .second-side span {
-    transform-origin: 222px;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color-dark);
 }
