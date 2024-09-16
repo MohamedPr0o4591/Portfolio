@@ -4,7 +4,7 @@ import HomeSection from "./components/HomeSection";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
-import Footer from "/src/utilities/footer/Footer.jsx";
+import Footer from "./utilities/Footer/Footer";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("home");
