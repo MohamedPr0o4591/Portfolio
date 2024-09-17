@@ -13,6 +13,7 @@ import {
   ArrowForwardIos,
   ArrowOutward,
   GitHub,
+  PlayArrow,
 } from "@mui/icons-material";
 
 export default function ProjectsSection(props) {
@@ -84,6 +85,14 @@ export default function ProjectsSection(props) {
                       <GitHub sx={{ fontSize: "3rem" }} />
                     </IconButton>
                   </a>
+
+                  {project.video && (
+                    <a href={project.video} target="_blank">
+                      <IconButton color="inherit">
+                        <PlayArrow sx={{ fontSize: "3rem" }} />
+                      </IconButton>
+                    </a>
+                  )}
                 </div>
               </div>
 

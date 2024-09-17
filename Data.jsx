@@ -258,6 +258,8 @@ export const webProjects = [
     category: "Frontend Project",
     usage: ["React.js", "Material UI", "CSS"],
     github: "https://github.com/MohamedPr0o4591/Admin-Education-Project",
+    video:
+      "https://drive.google.com/file/d/17uzd00efouO3aYssxipBp7U-pvnZn0xU/view?usp=sharing",
   },
   {
     id: 10,
