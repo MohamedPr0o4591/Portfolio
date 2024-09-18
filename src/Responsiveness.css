@@ -93,6 +93,10 @@
     transform: scale(1.02) translateY(-5px) translateX(-5px);
   }
 
+  .projects-section {
+    padding: 20px;
+  }
+
   .contact-section .contact-container form {
     padding: 20px 30px;
   }

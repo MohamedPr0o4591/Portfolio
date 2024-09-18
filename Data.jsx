@@ -254,6 +254,8 @@ export const webProjects = [
     category: "Frontend Project",
     usage: ["React.js", "Material UI", "CSS", "Swiper JS"],
     github: "https://github.com/MohamedPr0o4591/Free-Luke-cpa",
+    video:
+      "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7242291153704808451",
   },
   {
     id: 9,
