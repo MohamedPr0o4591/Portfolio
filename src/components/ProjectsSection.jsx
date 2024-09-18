@@ -27,8 +27,10 @@ export default function ProjectsSection(props) {
     if (sliderRef.current) sliderRef.current.slickPrev();
   }, []);
 
+  const [projectVideo, setProjectVideo] = useState("");
+
   const fadeSettings = {
-    dots: true,
+    dots: false,
     fade: true,
     infinite: true,
     speed: 500,
@@ -36,6 +38,11 @@ export default function ProjectsSection(props) {
     slidesToScroll: 1,
     waitForAnimate: false,
     arrows: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    pauseOnDotsHover: true,
+    pauseOnFocus: false,
   };
 
   return (
@@ -87,7 +94,10 @@ export default function ProjectsSection(props) {
                   </a>
 
                   {project.video && (
-                    <a href={project.video} target="_blank">
+                    <a
+                      href="#project-video"
+                      onClick={() => setProjectVideo(project.video)}
+                    >
                       <IconButton color="inherit">
                         <PlayArrow sx={{ fontSize: "3rem" }} />
                       </IconButton>
@@ -127,6 +137,19 @@ export default function ProjectsSection(props) {
           );
         })}
       </Slider>
+
+      {projectVideo && (
+        <div className="video-container" id="project-video">
+          <iframe
+            src={projectVideo}
+            height="803"
+            width="100%"
+            frameborder="0"
+            allowfullscreen=""
+            title="منشور مضمن"
+          ></iframe>
+        </div>
+      )}
     </section>
   );
 }

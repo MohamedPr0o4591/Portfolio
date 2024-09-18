@@ -178,6 +178,8 @@ export const webProjects = [
     category: "Frontend Project",
     usage: ["React.js", "Material UI", "CSS"],
     github: "https://github.com/MohamedPr0o4591/CRUDS",
+    video:
+      "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7242176801769222145",
   },
   {
     id: 2,
@@ -188,6 +190,8 @@ export const webProjects = [
     usage: ["React.js", "Material UI", "CSS"],
     category: "Frontend Project",
     github: "https://github.com/MohamedPr0o4591/photo-editor",
+    video:
+      "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7242186680365920256",
   },
   {
     id: 3,
@@ -198,6 +202,8 @@ export const webProjects = [
     category: "Frontend Project",
     usage: ["HTML", "CSS", "JavaScript", "Bootstrap", "Swiper JS"],
     github: "https://github.com/MohamedPr0o4591/MisterProgramming",
+    video:
+      "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7242208360693936128",
   },
   {
     id: 4,
@@ -259,7 +265,7 @@ export const webProjects = [
     usage: ["React.js", "Material UI", "CSS"],
     github: "https://github.com/MohamedPr0o4591/Admin-Education-Project",
     video:
-      "https://drive.google.com/file/d/17uzd00efouO3aYssxipBp7U-pvnZn0xU/view?usp=sharing",
+      "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7242147335730843648",
   },
   {
     id: 10,

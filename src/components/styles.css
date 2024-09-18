@@ -443,6 +443,22 @@ h2 span {
   display: block;
 }
 
+.projects-section .video-container {
+  margin-top: 10rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px var(--main-color);
+  transition: all 0.3s ease;
+}
+
+.projects-section .video-container iframe {
+  border-radius: 1rem;
+}
+
+.projects-section .video-container:hover {
+  transform: scale(1.03);
+}
+
 /* contact section */
 
 .contact-section .contact-container {
