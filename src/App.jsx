@@ -26,7 +26,8 @@ export default function App() {
         });
       },
       {
-        threshold: 0.5,
+        threshold: 0,
+        rootMargin: "-50% 0px -50% 0px",
       }
     );
 
