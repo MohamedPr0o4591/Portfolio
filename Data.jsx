@@ -22,6 +22,7 @@ import adminEducation from "./src/assets/design/admin-education.png";
 import quranApp from "./src/assets/design/quran-app.png";
 import fastCreditCards from "./src/assets/design/fast-credit-cards.png";
 import learnWithMe from "./src/assets/design/learn-with-me.png";
+import quranKareem from "./src/assets/design/quran-kareem.png";
 
 export const socialMedia = [
   {
@@ -298,6 +299,16 @@ export const webProjects = [
     category: "Frontend Project",
     usage: ["React.js", "Material UI", "CSS", "Swiper JS"],
     github: "https://github.com/MohamedPr0o4591/learnWithMe-Platform",
+  },
+  {
+    id: 13,
+    title: "Quran Kareem",
+    desc: "Listen to the complete recitation of the Holy Quran by Sheikh Mishary Rashid Alafasy. This project offers a high-quality audio experience of the Quranic text for reading and listening.",
+    img: quranKareem,
+    link: "https://alquran-alkareem.vercel.app/",
+    category: "Frontend Project",
+    usage: ["React.js", "Material UI", "CSS"],
+    github: "https://github.com/MohamedPr0o4591/quran-kareem",
   },
 ];
 
