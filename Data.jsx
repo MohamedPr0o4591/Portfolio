@@ -309,6 +309,8 @@ export const webProjects = [
     category: "Frontend Project",
     usage: ["React.js", "Material UI", "CSS"],
     github: "https://github.com/MohamedPr0o4591/quran-kareem",
+    video:
+      "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7242666163204182016",
   },
 ];
 
