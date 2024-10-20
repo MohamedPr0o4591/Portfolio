@@ -200,8 +200,6 @@ h2 span {
 .about-section .content .inner-container {
   overflow-y: auto;
   height: 70vh;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
 .about-section .timeline-items {
