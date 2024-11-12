@@ -1,0 +1,51 @@
+.admin-home-page {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding: 10px 20px;
+}
+
+.admin-home-page .slide {
+  border-right: 1px groove darkcyan;
+  box-shadow: 0.5rem 0.1rem 0.6rem var(--main-color-dark);
+  border-radius: 10px;
+}
+
+.admin-home-page h2 {
+  margin-top: 3rem;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.admin-home-page ul {
+  margin-top: 3rem;
+  font-size: 2rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-home-page ul a {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-home-page ul a::before {
+  content: "";
+  background: var(--main-color-dark);
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease-out;
+}
+
+.admin-home-page ul a:hover::before,
+.admin-home-page ul a.active::before {
+  width: 100%;
+}

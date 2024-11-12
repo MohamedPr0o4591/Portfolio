@@ -7,7 +7,9 @@ function NavBar(props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="header">
+    <header
+      className={`header ${location.pathname.includes("/admin") && "d-none"}`}
+    >
       <a href="#" className="logo">
         Mohamed <span>Mokhtar</span>
       </a>

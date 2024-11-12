@@ -50,6 +50,10 @@ section {
   font-weight: 400;
 }
 
+.d-none {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

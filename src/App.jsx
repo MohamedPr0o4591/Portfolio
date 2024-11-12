@@ -5,58 +5,28 @@ import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./utilities/Footer/Footer";
+import { Route, Routes } from "react-router";
+import HomePage from "./pages/home/HomePage";
+import Admin from "./admin/Admin";
+import ErrPage from "./pages/error/ErrPage";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("home");
-
-  const sectionRefs = useRef({
-    home: null,
-    about: null,
-    projects: null,
-    contact: null,
-  });
-
-  useEffect(() => {
-    let observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0,
-        rootMargin: "-50% 0px -50% 0px",
-      }
-    );
-
-    Object.values(sectionRefs.current).forEach((section) => {
-      if (section) {
-        observer.observe(section);
-      }
-    });
-
-    return (_) => {
-      Object.values(sectionRefs.current).forEach((section) => {
-        if (section) {
-          observer.unobserve(section);
-        }
-      });
-    };
-  }, []);
 
   return (
     <div className="App">
       <NavBar activeSection={activeSection} />
 
-      <HomeSection sectionRefs={sectionRefs} />
+      <Routes>
+        <Route
+          index
+          element={<HomePage setActiveSection={setActiveSection} />}
+        />
 
-      <AboutSection sectionRefs={sectionRefs} />
+        <Route path="/admin/*" element={<Admin />} />
 
-      <ProjectsSection sectionRefs={sectionRefs} />
-
-      <ContactSection sectionRefs={sectionRefs} />
+        <Route path="*" element={<ErrPage />} />
+      </Routes>
 
       <Footer />
     </div>
