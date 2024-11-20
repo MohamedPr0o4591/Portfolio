@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./auth.css";
 import axios from "axios";
-import { useNavigate } from "react-router";
 import { encryptedToken } from "../../../Crypted";
 
 function Login() {
@@ -12,8 +11,6 @@ function Login() {
 
   const [userData, setUserData] = useState(initialData);
   const [msgAuth, setMsgAuth] = useState("");
-
-  const nav = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -44,7 +41,7 @@ function Login() {
         encryptedToken(res.data.user.m_id);
 
         setInterval(() => {
-          nav("/admin/dashboard");
+          location.pathname = "/admin/dashboard";
         }, 2000);
       } catch (err) {
         setMsgAuth("error");

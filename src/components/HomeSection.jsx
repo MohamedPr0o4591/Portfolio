@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.css";
-import { socialMedia } from "../../Data";
-import cdFile from "../assets/cv.pdf";
-import homeImg from "../assets/mohamed.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllInfoData } from "../redux/actions/allActions";
+import {
+  FacebookSharp,
+  GitHub,
+  Instagram,
+  LinkedIn,
+  Telegram,
+  WhatsApp,
+} from "@mui/icons-material";
 
 export default function HomeSection(props) {
+  const allData = useSelector((state) => state.GET_ALL_INFO_DATA.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllInfoData());
+  }, []);
+
   return (
     <section
       className="home-section"
@@ -13,32 +27,62 @@ export default function HomeSection(props) {
     >
       <div className="content">
         <h1>
-          Hi, It's <span>Mohamed</span>
+          Hi, It's <span>{allData.title}</span>
         </h1>
         <h3>
-          I'm a <span>Front End Developer</span>
+          I'm a <span>{allData.sub_title}</span>
         </h3>
-        <p>
-          Senior Front End Developer | HTML ,CSS ,JavaScript ,PHP Passionate
-          about Creating Engaging Web Experience
-        </p>
+        <p>{allData.description}</p>
 
         <div className="social-media">
           <ul>
-            {socialMedia?.map((social) => {
-              return (
-                <li key={social.id}>
-                  <a href={social.link} target="_blank">
-                    {social.icon}
-                  </a>
-                </li>
-              );
-            })}
+            <li>
+              <a href={allData.fb} target="_blank">
+                <FacebookSharp sx={{ fontSize: 2.5 + "rem" }} />
+              </a>
+            </li>
+
+            <li>
+              <a href={allData.wb} target="_blank">
+                <WhatsApp sx={{ fontSize: 2.5 + "rem" }} />
+              </a>
+            </li>
+
+            <li>
+              <a href={allData.tele} target="_blank">
+                <Telegram sx={{ fontSize: 2.5 + "rem" }} />
+              </a>
+            </li>
+
+            <li>
+              <a href={allData.insta} target="_blank">
+                <Instagram sx={{ fontSize: 2.5 + "rem" }} />
+              </a>
+            </li>
+
+            <li>
+              <a href={allData.linkedIn} target="_blank">
+                <LinkedIn sx={{ fontSize: 2.5 + "rem" }} />
+              </a>
+            </li>
+
+            <li>
+              <a href={allData.github} target="_blank">
+                <GitHub sx={{ fontSize: 2.5 + "rem" }} />
+              </a>
+            </li>
           </ul>
         </div>
 
         <div className="group-buttons">
-          <a href={cdFile} download={"cv.pdf"} className="btn">
+          <a
+            href={`${import.meta.env.VITE_HOST}portfolioAdmin/upload/${
+              allData.cv
+            }`}
+            target="_blank"
+            download={"cv.pdf"}
+            className="btn"
+          >
             Download CV
           </a>
           <a href="#contact" className="btn">
@@ -52,7 +96,12 @@ export default function HomeSection(props) {
           {Array.from({ length: 50 }, (_, i) => (
             <span key={i} style={{ "--i": i }} />
           ))}
-          <img src={homeImg} alt="Eng. Mohamed Mokhtar" />
+          <img
+            src={`${import.meta.env.VITE_HOST}portfolioAdmin/upload/${
+              allData.img
+            }`}
+            alt="Eng. Mohamed Mokhtar"
+          />
         </div>
       </div>
     </section>

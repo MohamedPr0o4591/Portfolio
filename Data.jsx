@@ -24,39 +24,6 @@ import fastCreditCards from "./src/assets/design/fast-credit-cards.png";
 import learnWithMe from "./src/assets/design/learn-with-me.png";
 import quranKareem from "./src/assets/design/quran-kareem.png";
 
-export const socialMedia = [
-  {
-    id: 1,
-    icon: <FacebookSharp sx={{ fontSize: 2.5 + "rem" }} />,
-    link: "https://www.facebook.com/lmohamedmokhtarl",
-  },
-  {
-    id: 2,
-    icon: <WhatsApp sx={{ fontSize: 2.5 + "rem" }} />,
-    link: "https://api.whatsapp.com/send/?phone=%2B201022585956&text&type=phone_number&app_absent=0",
-  },
-  {
-    id: 3,
-    icon: <Telegram sx={{ fontSize: 2.5 + "rem" }} />,
-    link: "https://t.me/mohamedpr0o459",
-  },
-  {
-    id: 4,
-    icon: <Instagram sx={{ fontSize: 2.5 + "rem" }} />,
-    link: "https://www.instagram.com/mohamedpr0o459/",
-  },
-  {
-    id: 5,
-    icon: <LinkedIn sx={{ fontSize: 2.5 + "rem" }} />,
-    link: "https://www.linkedin.com/in/mohamed-mokhtar-245927277",
-  },
-  {
-    id: 6,
-    icon: <GitHub sx={{ fontSize: 2.5 + "rem" }} />,
-    link: "https://github.com/MohamedPr0o4591",
-  },
-];
-
 export const about_interests = [
   {
     id: 1,
@@ -311,26 +278,5 @@ export const webProjects = [
     github: "https://github.com/MohamedPr0o4591/quran-kareem",
     video:
       "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7242666163204182016",
-  },
-];
-
-export const contactInfo = [
-  {
-    id: 1,
-    icon: <Call sx={{ fontSize: "3rem" }} />,
-    title: "Phone",
-    info: "(+20) 11 4744 6038",
-  },
-  {
-    id: 2,
-    icon: <Email sx={{ fontSize: "3rem" }} />,
-    title: "Email",
-    info: "ev9ry.24hours@gmail.com",
-  },
-  {
-    id: 3,
-    icon: <LocationOn sx={{ fontSize: "3rem" }} />,
-    title: "Address",
-    info: "Kafr El-Zayat, Gharbia Governorate, Egypt, 31611",
   },
 ];

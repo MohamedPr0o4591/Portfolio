@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "./HomeSection.css";
 import { Container } from "@mui/material";
+import axios from "axios";
 
 export default function HomeSection() {
   const initialData = {
     title: "",
     subTitle: "",
     desc: "",
-    img: "",
-    pdf: "",
     imgReader: "",
     pdfReader: "",
     fb: "",
@@ -19,6 +18,8 @@ export default function HomeSection() {
     github: "",
   };
   const [dataInfo, setDataInfo] = useState(initialData);
+  const [imgFile, setImgFile] = useState();
+  const [pdfFile, setPdfFile] = useState();
 
   const handleUploadImg = (e) => {
     const file = e.target.files[0];
@@ -27,7 +28,8 @@ export default function HomeSection() {
     const reader = new FileReader();
 
     reader.onload = (_) => {
-      setDataInfo({ ...dataInfo, img: file, imgReader: reader.result });
+      setDataInfo({ ...dataInfo, imgReader: reader.result });
+      setImgFile(file);
     };
 
     reader.readAsDataURL(file);
@@ -35,7 +37,7 @@ export default function HomeSection() {
 
   const handleUploadPDF = (e) => {
     const file = e.target.files[0];
-    setDataInfo({ ...dataInfo, pdf: file });
+    setPdfFile(file);
 
     // how can i read pdf to iframe
 
@@ -50,6 +52,117 @@ export default function HomeSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let flag;
+
+    if (
+      dataInfo.title !== "" ||
+      dataInfo.subTitle !== "" ||
+      dataInfo.desc !== "" ||
+      imgFile != null ||
+      pdfFile != null ||
+      dataInfo.fb !== "" ||
+      dataInfo.wb !== "" ||
+      dataInfo.tg !== "" ||
+      dataInfo.instagram !== "" ||
+      dataInfo.linkedin !== "" ||
+      dataInfo.github !== ""
+    ) {
+      flag = true;
+    } else flag = false;
+
+    if (flag) {
+      const formData = new FormData();
+      const formData2 = new FormData();
+
+      if (dataInfo.title !== "") {
+        formData.append("title", dataInfo.title);
+      }
+
+      if (dataInfo.subTitle !== "") {
+        formData.append("sub", dataInfo.subTitle);
+      }
+
+      if (dataInfo.desc !== "") {
+        formData.append("desc", dataInfo.desc);
+      }
+
+      if (imgFile != null) {
+        formData.append("img", imgFile);
+      }
+
+      if (pdfFile != null) {
+        formData2.append("cv", pdfFile);
+      }
+
+      if (dataInfo.fb !== "") {
+        formData2.append("fb", dataInfo.fb);
+      }
+
+      if (dataInfo.wb !== "") {
+        formData2.append("wb", dataInfo.wb);
+      }
+
+      if (dataInfo.tg !== "") {
+        formData2.append("tl", dataInfo.tg);
+      }
+
+      if (dataInfo.instagram !== "") {
+        formData2.append("insta", dataInfo.instagram);
+      }
+
+      if (dataInfo.linkedin !== "") {
+        formData2.append("linkedIn", dataInfo.linkedin);
+      }
+
+      if (dataInfo.github !== "") {
+        formData2.append("github", dataInfo.github);
+      }
+
+      let err;
+
+      try {
+        await axios.post(
+          `${
+            import.meta.env.VITE_HOST
+          }portfolioAdmin/upload_info/upload_info.php`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+
+        err = false;
+      } catch (err) {
+        err = true;
+      }
+
+      try {
+        await axios.post(
+          `${
+            import.meta.env.VITE_HOST
+          }portfolioAdmin/upload_info/upload_social.php`,
+          formData2,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+
+        err = false;
+      } catch (err) {
+        err = true;
+      }
+
+      if (err) {
+        alert("Something went wrong");
+      } else {
+        alert("Information Updated");
+        setDataInfo(initialData);
+      }
+    } else alert("Please fill all the fields");
   };
 
   return (
@@ -98,7 +211,7 @@ export default function HomeSection() {
               <input type="file" id="pdf" onChange={handleUploadPDF} />
               <iframe
                 src={dataInfo.pdfReader}
-                frameborder="0"
+                frameBorder="0"
                 width={"100%"}
                 height={"300px"}
               ></iframe>

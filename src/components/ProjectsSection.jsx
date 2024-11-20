@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./styles.css";
 import HeadLine from "./HeadLine";
 import { webProjects } from "../../Data";
-import img from "../assets/design/admin-dashboard.png";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -15,8 +14,17 @@ import {
   GitHub,
   PlayArrow,
 } from "@mui/icons-material";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProjects } from "../redux/actions/allActions";
 
 export default function ProjectsSection(props) {
+  const allProjects = useSelector((state) => state.GET_PROJECTS.projects);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllProjects());
+  }, []);
+
   const sliderRef = useRef(null);
 
   const goToNext = useCallback(() => {
@@ -54,49 +62,49 @@ export default function ProjectsSection(props) {
       <HeadLine title="Latest" subTitle="Projects" />
 
       <strong className="projects-count">
-        Web Projects ({webProjects.length})
+        Web Projects ({allProjects.length})
       </strong>
 
       <Slider ref={sliderRef} {...fadeSettings}>
-        {webProjects.map((project) => {
+        {allProjects.map((project, index) => {
           return (
-            <div className="projects-container" key={project.id}>
+            <div className="projects-container" key={index}>
               <div className="project-content">
                 <span className="handjet-400">
-                  {project.id < 10 ? `0${project.id}` : project.id}
+                  {index + 1 < 10 ? `0${index + 1}` : index + 1}
                 </span>
 
-                <h3>{project.category}</h3>
+                <h3>{project.p_title}</h3>
 
-                <h4>{project.title}</h4>
+                <h4>{project.p_subTitle}</h4>
 
-                <p>{project.desc}</p>
+                <p>{project.p_desc}</p>
 
                 <div className="project-usage">
                   <ul>
-                    {project.usage?.map((item, index) => {
+                    {project.p_types.p_type?.map((item, index) => {
                       return <li key={index}>{item}</li>;
                     })}
                   </ul>
                 </div>
 
                 <div className="project-links">
-                  <a href={project.link} target="_blank">
+                  <a href={project.p_linkWeb} target="_blank">
                     <IconButton color="inherit">
                       <ArrowOutward sx={{ fontSize: "3rem" }} />
                     </IconButton>
                   </a>
 
-                  <a href={project.github} target="_blank">
+                  <a href={project.p_linkGithub} target="_blank">
                     <IconButton color="inherit">
                       <GitHub sx={{ fontSize: "3rem" }} />
                     </IconButton>
                   </a>
 
-                  {project.video && (
+                  {project.p_linkVideo && (
                     <a
                       href="#project-video"
-                      onClick={() => setProjectVideo(project.video)}
+                      onClick={() => setProjectVideo(project.p_linkVideo)}
                     >
                       <IconButton color="inherit">
                         <PlayArrow sx={{ fontSize: "3rem" }} />
@@ -107,7 +115,12 @@ export default function ProjectsSection(props) {
               </div>
 
               <div className="project-img-box">
-                <img src={project.img} alt={project.title} />
+                <img
+                  src={`${import.meta.env.VITE_HOST}portfolioAdmin/upload/${
+                    project.p_img
+                  }`}
+                  alt={project.p_title}
+                />
 
                 <div className="project-controls">
                   <IconButton
@@ -144,8 +157,8 @@ export default function ProjectsSection(props) {
             src={projectVideo}
             height="803"
             width="100%"
-            frameborder="0"
-            allowfullscreen=""
+            frameBorder="0"
+            allowFullScreen=""
             title="منشور مضمن"
           ></iframe>
         </div>

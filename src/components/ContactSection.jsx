@@ -1,11 +1,21 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import HeadLine from "./HeadLine";
 import { contactInfo } from "../../Data";
 import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllContactsData } from "../redux/actions/allActions";
+import { Call, Email, LocationOn } from "@mui/icons-material";
 
 export default function ContactSection(props) {
+  const data = useSelector((state) => state.CONTACTS_DATA.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllContactsData());
+  }, []);
+
   const form = useRef();
 
   function sendEmail(e) {
@@ -99,19 +109,41 @@ export default function ContactSection(props) {
         </form>
 
         <div className="contact-info">
-          {contactInfo.map((info) => {
-            return (
-              <div className="contact-info-item" key={info.id}>
-                <div className="icon-box">{info.icon}</div>
+          <div className="contact-info-item">
+            <div className="icon-box">
+              <Call sx={{ fontSize: "3rem" }} />
+            </div>
 
-                <div className="contact-info-content">
-                  <span>{info.title}</span>
+            <div className="contact-info-content">
+              <span>Phone</span>
 
-                  <p>{info.info}</p>
-                </div>
-              </div>
-            );
-          })}
+              <p>{data.phone}</p>
+            </div>
+          </div>
+
+          <div className="contact-info-item">
+            <div className="icon-box">
+              <Email sx={{ fontSize: "3rem" }} />
+            </div>
+
+            <div className="contact-info-content">
+              <span>Email</span>
+
+              <p>{data.email}</p>
+            </div>
+          </div>
+
+          <div className="contact-info-item">
+            <div className="icon-box">
+              <LocationOn sx={{ fontSize: "3rem" }} />
+            </div>
+
+            <div className="contact-info-content">
+              <span>Address</span>
+
+              <p>{data.address}</p>
+            </div>
+          </div>
         </div>
       </div>
 
