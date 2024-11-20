@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import HeadLine from "./HeadLine";
-import { contactInfo } from "../../Data";
 import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
