@@ -6,10 +6,14 @@ import "./HomePage.css";
 import { Link } from "react-router-dom";
 import {
   AccountTreeOutlined,
+  AccountTreeRounded,
+  ContactsOutlined,
   ContactSupportOutlined,
   HomeOutlined,
   InfoOutlined,
+  PersonOutline,
 } from "@mui/icons-material";
+import { IconButton, Stack } from "@mui/material";
 
 const data = [
   {
@@ -100,6 +104,30 @@ function HomePage() {
           })}
         </ul>
       </div>
+
+      <Stack
+        direction={"row"}
+        justifyContent={"space-between"}
+        className="slide-min-screen"
+      >
+        <h4>Manager</h4>
+
+        <Stack direction={"row"} alignItems={"center"} gap={1}>
+          {data.map((item, index) => {
+            return (
+              <IconButton
+                color="inherit"
+                key={index}
+                onClick={(_) => {
+                  nav(item.path);
+                }}
+              >
+                {item.icon}
+              </IconButton>
+            );
+          })}
+        </Stack>
+      </Stack>
 
       <Outlet />
     </section>

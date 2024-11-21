@@ -1,9 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import NavBar from "./utilities/navbar/NavBar";
-import HomeSection from "./components/HomeSection";
-import AboutSection from "./components/AboutSection";
-import ProjectsSection from "./components/ProjectsSection";
-import ContactSection from "./components/ContactSection";
 import Footer from "./utilities/Footer/Footer";
 import { Route, Routes } from "react-router";
 import HomePage from "./pages/home/HomePage";

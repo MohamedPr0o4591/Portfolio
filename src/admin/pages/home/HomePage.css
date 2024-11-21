@@ -49,3 +49,7 @@
 .admin-home-page ul a.active::before {
   width: 100%;
 }
+
+.admin-home-page .slide-min-screen {
+  display: none;
+}
