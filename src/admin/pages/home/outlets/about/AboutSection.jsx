@@ -70,9 +70,8 @@ export default function AboutSection() {
       ) {
         try {
           await axios.post(
-            `${
-              import.meta.env.VITE_HOST
-            }portfolioAdmin/about_manager/upload.php`,
+            `${import.meta.env.VITE_HOST
+            }/portfolioAdmin/about_manager/upload.php`,
             formData,
             {
               headers: {
@@ -90,9 +89,8 @@ export default function AboutSection() {
       if (imgFile != null) {
         try {
           await axios.post(
-            `${
-              import.meta.env.VITE_HOST
-            }portfolioAdmin/upload_info/upload_info.php`,
+            `${import.meta.env.VITE_HOST
+            }/portfolioAdmin/upload_info/upload_info.php`,
             formData2
           );
 

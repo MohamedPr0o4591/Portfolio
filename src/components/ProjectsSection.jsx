@@ -16,9 +16,34 @@ import {
 } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProjects } from "../redux/actions/allActions";
+import img1 from "../assets/admineducation.jpg";
 
 export default function ProjectsSection(props) {
   const allProjects = useSelector((state) => state.GET_PROJECTS.projects);
+  // const allProjects = [
+  //   {
+  //     p_title: "Project 1",
+  //     p_subTitle: "Project 1",
+  //     p_desc: "Project 1",
+  //     p_linkWeb: "https://www.google.com",
+  //     p_linkRepo: "https://www.google.com",
+  //     p_types: {
+  //       p_type: ["HTML", "CSS", "JavaScript"],
+  //     },
+  //     p_img: img1,
+  //   },
+  //   {
+  //     p_title: "Project 2",
+  //     p_subTitle: "Project 2",
+  //     p_desc: "Project 2",
+  //     p_linkWeb: "https://www.google.com",
+  //     p_linkRepo: "https://www.google.com",
+  //     p_types: {
+  //       p_type: ["HTML", "CSS", "JavaScript"],
+  //     },
+  //     p_img: "https://www.google.com",
+  //   }
+  // ]
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -62,7 +87,7 @@ export default function ProjectsSection(props) {
       <HeadLine title="Latest" subTitle="Projects" />
 
       <strong className="projects-count">
-        Web Projects ({allProjects.length})
+        Web Projects ({allProjects?.length})
       </strong>
 
       <Slider ref={sliderRef} {...fadeSettings}>
@@ -116,9 +141,9 @@ export default function ProjectsSection(props) {
 
               <div className="project-img-box">
                 <img
-                  src={`${import.meta.env.VITE_HOST}portfolioAdmin/upload/${
-                    project.p_img
-                  }`}
+                  src={`${import.meta.env.VITE_HOST}/portfolioAdmin/upload${project.p_img
+                    }`}
+                  // src={project.p_img}
                   alt={project.p_title}
                 />
 

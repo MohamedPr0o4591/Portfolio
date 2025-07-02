@@ -27,12 +27,12 @@ export default function HomeSection(props) {
     >
       <div className="content">
         <h1>
-          Hi, It's <span>{allData.title}</span>
+          Hi, It's <span>{allData.title || "Mohamed Mokhtar"}</span>
         </h1>
         <h3>
-          I'm a <span>{allData.sub_title}</span>
+          I'm a <span>{allData.sub_title || "Full Stack developer"}</span>
         </h3>
-        <p>{allData.description}</p>
+        <p>{allData.description || "Full Stack Developer with expertise in React, React Native, PHP, and modern web technologies.Passionate about designing and implementing efficient and scalable web solutions, ensuringseamless user experiences."}</p>
 
         <div className="social-media">
           <ul>
@@ -76,9 +76,8 @@ export default function HomeSection(props) {
 
         <div className="group-buttons">
           <a
-            href={`${import.meta.env.VITE_HOST}portfolioAdmin/upload/${
-              allData.cv
-            }`}
+            href={`${import.meta.env.VITE_HOST}/portfolioAdmin/upload${allData.cv
+              }`}
             target="_blank"
             download={"cv.pdf"}
             className="btn"
@@ -97,10 +96,10 @@ export default function HomeSection(props) {
             <span key={i} style={{ "--i": i }} />
           ))}
           <img
-            src={`${import.meta.env.VITE_HOST}portfolioAdmin/upload/${
-              allData.img
-            }`}
+            // src="../src/assets/mohamed.jpg"
+            src={`${import.meta.env.VITE_HOST}/portfolioAdmin/upload${allData.img}`}
             alt="Eng. Mohamed Mokhtar"
+            title="Eng. Mohamed Mokhtar"
           />
         </div>
       </div>

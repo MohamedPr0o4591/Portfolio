@@ -27,9 +27,8 @@ export default function AboutSection(props) {
       <div className="img-box">
         <div className="circle">
           <img
-            src={`${import.meta.env.VITE_HOST}portfolioAdmin/upload/${
-              photo.sub_img
-            }`}
+            // src="./src/assets/img2.png"
+            src={`${import.meta.env.VITE_HOST}/portfolioAdmin/upload${photo.sub_img}`}
             alt="Eng. Mohamed Mokhtar"
           />
         </div>
@@ -37,12 +36,12 @@ export default function AboutSection(props) {
       <div className="content">
         <HeadLine title="About" subTitle="Me" />
 
-        <h3>{data.sub1}</h3>
+        <h3>{data.sub1 || `I'm here to explain my Profile in a better way`}</h3>
         <div className="inner-container">
           <div className="timeline-items">
-            <span>{data.sub2}</span>
+            <span>{data.sub2 || "I'm a Full Stack Web Developer."}</span>
 
-            <span>{data.sub3}</span>
+            <span>{data.sub3 || "I'm looking for a job as a Full Stack Web Developer."}</span>
 
             <span>Interests :-</span>
 

@@ -129,7 +129,7 @@ function OnEditProject(props) {
 
       try {
         await axios.post(
-          `${import.meta.env.VITE_HOST}portfolioAdmin/projects/editProject.php`,
+          `${import.meta.env.VITE_HOST}/portfolioAdmin/projects/editProject.php`,
           formData,
           {
             headers: {

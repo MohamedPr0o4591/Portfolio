@@ -122,9 +122,8 @@ export default function HomeSection() {
 
       try {
         await axios.post(
-          `${
-            import.meta.env.VITE_HOST
-          }portfolioAdmin/upload_info/upload_info.php`,
+          `${import.meta.env.VITE_HOST
+          }/portfolioAdmin/upload_info/upload_info.php`,
           formData,
           {
             headers: {
@@ -140,9 +139,8 @@ export default function HomeSection() {
 
       try {
         await axios.post(
-          `${
-            import.meta.env.VITE_HOST
-          }portfolioAdmin/upload_info/upload_social.php`,
+          `${import.meta.env.VITE_HOST
+          }/portfolioAdmin/upload_info/upload_social.php`,
           formData2,
           {
             headers: {

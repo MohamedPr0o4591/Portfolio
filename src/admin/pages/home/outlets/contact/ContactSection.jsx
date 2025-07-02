@@ -40,7 +40,7 @@ function ContactSection() {
 
       try {
         await axios.post(
-          `${import.meta.env.VITE_HOST}portfolioAdmin/contact/editContact.php`,
+          `${import.meta.env.VITE_HOST}/portfolioAdmin/contact/editContact.php`,
           formData
         );
 

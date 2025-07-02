@@ -30,7 +30,7 @@ function OnDeleteProject(props) {
       await axios.delete(
         `${
           import.meta.env.VITE_HOST
-        }portfolioAdmin/projects/deleteProject.php?id=${
+        }/portfolioAdmin/projects/deleteProject.php?id=${
           props.projectDetails.id
         }`
       );

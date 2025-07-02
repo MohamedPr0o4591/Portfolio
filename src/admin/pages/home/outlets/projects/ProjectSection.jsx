@@ -80,7 +80,7 @@ export default function ProjectSection() {
         await axios.post(
           `${
             import.meta.env.VITE_HOST
-          }portfolioAdmin/projects/uploadProject.php`,
+          }/portfolioAdmin/projects/uploadProject.php`,
           formData,
           {
             headers: {
@@ -273,7 +273,7 @@ export default function ProjectSection() {
                   {/* تطبيق التقطيع هنا */}
                   <strong>
                     <ul>
-                      {item.p_types.p_type.map((item, index) => (
+                      {item.p_types.p_type?.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>
@@ -281,7 +281,7 @@ export default function ProjectSection() {
                 </div>
                 <div className="project-img">
                   <img
-                    src={`${import.meta.env.VITE_HOST}portfolioAdmin/upload/${
+                    src={`${import.meta.env.VITE_HOST}/portfolioAdmin/upload${
                       item.p_img
                     }`}
                     alt={item.p_title}
