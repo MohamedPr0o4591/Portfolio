@@ -38,6 +38,10 @@
   margin: 0;
 }
 
+.project-types-list {
+  flex-wrap: wrap;
+}
+
 .project-section-outlet .project-container .project-content span {
   font-size: 16px;
 }

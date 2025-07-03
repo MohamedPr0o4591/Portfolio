@@ -272,7 +272,7 @@ export default function ProjectSection() {
                   <p>{truncateDescription(item.p_desc)}</p>{" "}
                   {/* تطبيق التقطيع هنا */}
                   <strong>
-                    <ul>
+                    <ul className="project-types-list">
                       {item.p_types.p_type?.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))}

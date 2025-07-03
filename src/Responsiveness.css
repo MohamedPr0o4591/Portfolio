@@ -27,7 +27,7 @@
     height: 70vw;
   }
 
-  .home-section .home-img .img-box > span {
+  .home-section .home-img .img-box>span {
     transform-origin: calc(70vw / 2);
   }
 
@@ -57,7 +57,7 @@
     left: 38.5px;
   }
 
-  .timeline-items > span {
+  .timeline-items>span {
     text-align: start;
   }
 
@@ -108,6 +108,7 @@
   .contact-section .contact-info {
     padding: 10px 20px;
   }
+
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
@@ -124,7 +125,7 @@
     height: 70vw;
   }
 
-  .home-section .home-img .img-box > span {
+  .home-section .home-img .img-box>span {
     transform-origin: calc(70vw / 2);
   }
 
@@ -184,5 +185,9 @@
 
   .admin-home-page section {
     margin-top: 60px;
+  }
+
+  .project-section-outlet .project-parent-box {
+    flex-direction: column;
   }
 }
