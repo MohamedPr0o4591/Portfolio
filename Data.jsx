@@ -72,6 +72,14 @@ export const about_interests = [
         id: 4,
         skill: "React Native",
       },
+      {
+        id: 5,
+        skill: "Electron",
+      },
+      {
+        id: 6,
+        skill: "Laravel",
+      },
     ],
   },
   {
